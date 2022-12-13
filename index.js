@@ -19,7 +19,7 @@ postAddCats(body) {
         headers: this._headers
     })
 
-}
+};
 
 getAddCats(){
 
@@ -30,6 +30,41 @@ getAddCats(){
 
 };
 
+updateCat(body, idCat) {
+
+    fetch(`${this._url}/update/ ${idCat}`, {
+        method: "PUT",
+        body: JSON.stringify(body),
+        headers: this._headers
+    })
+
+};
+
+deleteCat(idCat) {
+
+    fetch(`${this._url}/delete/${idCat}`, {
+        method: "DELETE"
+   
+    })
+
+};
+
+getOneCats(idCat){
+
+    fetch(`${this._url}/show/${idCat}`, {
+        method: "GET"
+       
+    })
+
+};
+getAllMiCats(){
+
+    fetch(`${this._url}/ids`, {
+        method: "GET"
+       
+    })
+
+};
 
 }
 
@@ -65,3 +100,19 @@ age: 7,  rate: 1, description: "назвал так кота, дети 90х ме
 
 
 catsHeroesMult.getAddCats();
+
+catsHeroesMult.updateCat({age:99}, 12155070);
+
+catsHeroesMult.getAddCats();
+
+catsHeroesMult.postAddCats({id: 456987321, name: "Создан для удаления", 
+img_link: "https://cs1.livemaster.ru/storage/3c/c7/f9930fd681390dfaf8944797efst--kukly-igrushki-kot-iz-shersti-igrushka.jpg",
+age: 11,  rate: 6, description: "ну, я пошел", favourite: false} );
+
+catsHeroesMult.deleteCat(456987321);
+
+catsHeroesMult.getOneCats(758965369);
+
+catsHeroesMult.getAllMiCats();
+
+
