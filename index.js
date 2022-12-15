@@ -118,4 +118,6 @@ catsHeroesMult.getAllMiCats();
 
 catsHeroesMult.getOneCats(7858758411);
 
+catsHeroesMult.getOneCats(7858758411);
+
 
